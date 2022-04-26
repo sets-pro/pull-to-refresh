@@ -143,6 +143,9 @@ public extension ES where Base: UIScrollView {
     }
     
     func startLoadingMore() {
+        if (self.base.footer?.noMoreData) {
+            return
+        }
         DispatchQueue.main.async { [weak base] in
             self.base?.footer?.startRefreshing(isAuto: false)
         }
