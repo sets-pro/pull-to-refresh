@@ -147,7 +147,7 @@ public extension ES where Base: UIScrollView {
             return
         }
         DispatchQueue.main.async { [weak base] in
-            self.base?.footer?.startRefreshing(isAuto: false)
+            self.base.footer?.startRefreshing(isAuto: false)
         }
     }
         
