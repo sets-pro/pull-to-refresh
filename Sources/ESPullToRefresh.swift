@@ -143,7 +143,7 @@ public extension ES where Base: UIScrollView {
     }
     
     func startLoadingMore() {
-        if (self.base.footer?.noMoreData) {
+        if (self.base.footer?.noMoreData ?? false) {
             return
         }
         DispatchQueue.main.async { [weak base] in
