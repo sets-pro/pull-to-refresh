@@ -142,6 +142,12 @@ public extension ES where Base: UIScrollView {
         self.base.footer?.noMoreData = false
     }
     
+    func startLoadingMore() {
+        DispatchQueue.main.async { [weak base] in
+            self.base?.footer?.startRefreshing(isAuto: false)
+        }
+    }
+        
     func stopLoadingMore() {
         self.base.footer?.stopRefreshing()
     }
